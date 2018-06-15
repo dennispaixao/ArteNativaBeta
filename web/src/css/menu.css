@@ -1,0 +1,257 @@
+  @font-face {
+        font-family: "segoe";
+        src: local("Segoe UI Light"),
+        local("Segoe WP Light"),
+        url('../fonts/segoeuil.ttf');
+ }
+*{ margin:0; padding:0; list-style: none; text-decoration: none;}
+html,body{width:100%; height:100%;}
+body{background: #ededed; color:darkslateblue;}
+
+
+.bold{
+    font-weight: bold;
+    font-size: 23px;
+ 
+}
+
+#btn-menu{
+    padding:10px;
+    width:20px;
+    height:20px;
+    margin-top: -65px;
+    margin-right: 20px;
+    background:#ddd;
+    border:2px solid yellow;
+    border-radius: 10px;
+    position:absolute;
+    visibility: hidden;
+}
+
+#btn-menu hr{
+    height:2px;
+    background-color: #333;
+    margin-top: 15%;
+    border-color: #333; 
+    transition: 0.5s;
+}
+
+#btn-menu:hover{
+    cursor: pointer;
+}
+#btn-menu:hover hr{
+    margin-top: 25%;
+   
+    
+}
+
+#topo{
+    width:100%;
+    height:80px
+
+}
+
+#logo{
+    width:200px;
+    height:100%;
+  
+    position:relative;
+    margin-left: 50px;
+    background-image: url('../img/logo.png');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#greetings{
+    text-align: right;
+    width:100%;
+    max-width: 100%;
+    font-family: segoe;
+    font-size: 20px;
+    float:right;
+    margin-right: 0;
+    top:5px;
+    color:#888;
+    height: 32px;
+    position:inherit;
+    
+}
+#greetings a{
+    padding:2px;
+    background:#555;
+    color:red;
+    border-radius:0 0 4px 4px 
+}
+#greetings a:hover{
+    font-weight: bold;
+}
+
+#oculos{
+    width:45px;
+    height:45px;
+    background:white;
+    background-image: url('../img/glss.jpg');
+    background-size: 100%;
+    border:2px solid #ccc;
+    border-radius: 30px;
+    float:right;
+    position: fixed;
+    right:20px;
+    bottom:50px;
+    opacity: 0.5;
+}
+#oculos:hover{
+    border:2px solid yellow;
+    cursor: pointer;
+    opacity:1;
+
+}
+
+#menu{
+    width:100%;
+    height:40px;
+    background: #333;
+    margin:0 auto;
+    margin-top:0;
+    transition:0.3s;
+}
+
+
+#menu ul{
+    height:100%;
+    background:#333;
+}
+#menu ul li{
+    text-align: center;
+    padding-top: 10px;
+    width:150px;
+    display: inline-block;
+    float:left;
+    
+}
+#menu ul li {
+    font-family: segoe;
+    color:#fff;
+}
+
+#menu ul li ul{
+    padding: 0;
+    text-align: left;
+    background:#eee;
+    position: absolute;
+    height:auto;
+    width:150px;
+    visibility: hidden;
+    transition: 0.1s;
+    margin-top: 10px;  
+    border:5px solid #777777;
+    border-top: none;
+}
+
+#menu ul li:hover{
+ cursor:pointer;  
+ color:yellow;  
+
+}
+#menu ul li ul li{
+     padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.5)
+
+    
+}
+#menu ul li ul li:hover{
+    background:darkorange;
+
+}
+#menu ul li:hover ul{
+   
+   visibility: visible;
+}
+
+#menu ul li ul li a{
+   color:#333;
+
+}
+#menu ul li ul li:hover{
+   background-color: yellow;
+   color:black
+
+}
+Pesquisa de pedido
+
+#menu ul li ul li:hover a{
+   color: yellow;
+
+}
+#container-h1{
+    text-align: center;
+    
+}
+#container-h1 h1{
+    width:600px;
+    margin:50px auto;
+    text-align: center;
+    font-family: segoe;
+
+
+}
+
+   
+@media screen and (max-width: 740px) {
+    #logo{
+        width:180px;
+
+    }
+   #menu,#topo{
+       width:100%; 
+       text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+   #topo{
+       width:100%; 
+      
+    }
+    #logo{
+        margin:0 auto;
+    }
+
+    #btn-menu{
+        visibility: visible;
+    }
+     #btn-menu:hover{
+        visibility: visible;
+    }
+    #menu{
+         padding:0;
+         display: none;
+    }
+    #menu ul {
+        padding:0;
+    }
+    #menu ul li{
+       width:100%;
+       margin:0 auto;
+       background:#333;
+    
+    }
+    #menu ul li ul, nav ul li ul li{
+        display:block; 
+    }
+    #menu ul li ul{
+    position:relative;
+    width:100%;
+   
+    }
+    
+     #menu ul li ul li{
+     display:none;
+     background:#00a0b7;
+     
+     }
+     #menu ul li:hover ul li{
+       display:block;   
+      }
+}

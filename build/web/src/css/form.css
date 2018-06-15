@@ -1,0 +1,111 @@
+#formulario{
+    background: #00a0b7;
+    width:80%;
+    margin: 0 auto;
+    text-align: center;
+}
+#prev_fotos,
+#formulario select,
+#formulario input,
+#formulario textarea{
+    height:35px;
+    width:500px;
+    max-width: 500px;
+    min-width: 500px;
+    margin:0 auto;
+    display: block;
+    margin-top:20px;
+    border-radius: 5px;
+    border:2px solid #ccc;  
+    font-size: 22px;
+    font-family: segoe;
+    background: white;
+}
+#formulario input[type="submit"], #formulario input[type="button"]{
+    width:150px;
+    max-width: 150px;
+    min-width: 150px;
+    color:#333;
+}
+#formulario input[type="submit"]:hover, #formulario input[type="button"]:hover{
+    color:#333;
+    border:2px solid yellow;
+    font-weight: bold;
+}
+#prev_fotos{
+    height:100px;   
+}
+
+#formulario select:hover,
+#formulario input[type="text"]:hover,
+#formulario input[type="password"]:hover,
+#formulario input[type="date"]:hover,
+#formulario input[type="number"]:hover,
+#formulario input[type="search"]:hover,
+#formulario textarea:hover{
+    background-color: #f9ffcc;
+}
+#formulario textarea{
+    height:100px;
+}
+#formulario p{
+    width:500px;
+    margin:15px auto;
+    text-align: left;
+    margin-bottom: -15px;
+    color:#555;
+    font-family: segoe;
+}
+.btn{
+    max-width: 150px;
+    height:50px;
+    background-color:#333;  
+    color:white;
+   
+}
+.btn:hover{
+   cursor:pointer; 
+   color:white;
+   background:#00a0b7;
+ 
+}
+.btn:active{
+ color:yellow;   
+ border:3px solid yellow;
+}
+#voltar{
+    font-size: 25px;
+    padding: 10px;
+    width:70px;
+    width:60%;
+    margin: 0 auto;
+    text-align: left;
+}
+#voltar a{
+    color:orangered;
+    font-family: segoe;
+    position:absolute;
+}
+#voltar a:hover{
+    border-bottom: 2px solid lightsteelblue;
+}
+@media screen and (max-width: 900px) {
+#formulario #prev_fotos, #formulario, #formulario input, #formulario textarea,#formulario p,#formulario  h1,  #formulario select{
+    width:90%;
+    min-width:60%;
+    max-width:60%;
+}
+}
+@media screen and (max-width: 600px) {
+#formulario #prev_fotos, #formulario, #formulario input,#formulario textarea,#formulario p,#formulario h1,  #formulario select{
+    min-width:90%;
+    max-width:90%;
+}
+}
+@media screen and (max-width: 400px) {
+#formulario #prev_fotos, #formulario, #formulario input,#formulario textarea,#formulario p,#formulario h1,  #formulario select{
+    width:98%;
+    min-width:98%;
+    max-width:98%;
+}
+}

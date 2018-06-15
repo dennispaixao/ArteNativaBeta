@@ -1,0 +1,11 @@
+#container-graf{
+    width:70%;
+    margin:0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    #container-graf{
+        width:100%;
+        
+    }
+}

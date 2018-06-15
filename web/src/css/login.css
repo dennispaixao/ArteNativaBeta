@@ -1,0 +1,155 @@
+* { padding: 0; margin: 0; }
+  @font-face {
+        font-family: "segoe";
+        src: local("Segoe UI Light"),
+        local("Segoe WP Light"),
+        url('../fonts/segoeuil.ttf');
+ }
+
+html, body{
+    min-height: 100% !important;
+    height: 100%;
+}
+
+#container-geral{
+    width: 100%;
+    height:100%;
+    font-family: segoe;
+      
+}
+#container-login{
+    width:20%;
+    height:100%;
+    float:left;
+    background:#fafafa;
+    display: table;
+    transition:0.3s;
+    text-align: center;
+        
+}
+#container-slogan{
+    width:70%;
+    height:100%;
+    margin:0 auto;
+    float:right;
+    background-image: url('../img/slogan.png');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+}
+
+#box-login{
+    width: 300px;
+    height:300px;
+    max-width: 90%;
+    max-height: 90%;
+    margin:0 auto;
+    padding:50px;
+    display: table-cell;
+    vertical-align: middle;
+    background: rgba(255,255,255,1);
+    border:1px solid #ddd;
+    text-align: center;
+
+   
+    
+ 
+}
+
+#logo{
+    width:300px;
+
+    margin: 0 auto;
+    height:88px;
+    background-image:url('../img/logo.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+#box-login #msg{
+    float:left;
+    font-family: segoe;
+    color:red;
+}
+#box-login input{
+    width:100%;
+    font-size: 1.5em;
+    border-radius: 5px;
+    margin:0 auto;
+    font-family: segoe;
+}
+
+#box-login input[type="button"]{
+    width:120px;
+    color:white;
+    height:50px;
+    font-size: 1.5em;
+    background-color: #999;
+    border-radius: 20px;
+    float:right;
+    margin-top: 10px;
+    padding-right: 15px;
+    font-family: segoe;
+    
+}
+#box-login input[type="button"]:hover{
+ background:lightgreen;   
+ cursor:pointer;
+
+}
+
+#links{
+    float:left;
+    margin-top: 10px;
+    text-align: left;
+}
+#links a{
+    color:#666;
+    font-size: 1.3em;
+    text-decoration: none;
+    
+}
+
+#links a:hover{
+    color:darkorange;
+    font-size: 1.3em;
+    text-decoration: none;
+    
+}
+
+#nome-usuario{
+    width:80%;
+    margin:10px auto;
+    background-color: #eee;
+
+}
+
+
+
+@media only screen and (max-width: 1350px) {
+    #container-slogan{ width:60%;  background-size: 50%;}
+    #container-login{width:40%}
+}
+
+@media only screen and (max-width: 1010px) {
+    #container-slogan{ width:50%;  background-size: 70%;}
+    #container-login{width:50%}
+}
+
+@media only screen and (max-width: 910px) {
+    #container-slogan{ width:40%;  background-size:90%;}
+    #container-login{width:60%}
+}
+
+@media only screen and (max-width: 690px) {
+    #container-slogan{ display: none;}
+    #container-login{width:100%; }
+}
+
+@media only screen and (max-width: 380px) {
+    #box-login{width:200px; padding:5px;}
+    
+}
+@media only screen and (max-width: 300px) {
+
+    #box-login input[type="button"]{ float:left }
+}
