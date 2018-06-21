@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="Model.Categoria"%>
+<%@page import="Model.Cliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +31,9 @@
                 <input type="search" name="Cliente" title="Cliente" class="J_place">  
                 <div id="lupa"></div>
           </div>
-            
+        <%
+                ArrayList<Cliente> clientes = (ArrayList<Cliente>) request.getAttribute("listaCliente");
+        %>    
         <div id="table">
             <table border="1px" >     
                 <thead>
@@ -43,11 +46,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (int i = 0; i < 15; i++) { %>
+                    <% 
+                        if (clientes != null){ %>
+                    <% for (Cliente cliente : clientes) { %>
                     <tr>
-                        <td>38684 <%= i %></td>
-                        <td>Pedro Álvares Cabral</td>  
-                        <td>29/05/2018</td>
+                        <td><%= cliente.getIdCliente() %></td>
+                        <td><%= cliente.getNome() %></td>  
+                        <td><%= cliente.getDataCadastro() %></td>
                         <td>Aguardando Pedido</td>
                         <td>
                             <a href="GerenciaCliente?ac=VerCliente&id=<%=0 %>">
@@ -63,6 +68,7 @@
 
                     </tr>
                     <%}%> 
+                  <%}%>  
                 </tbody>
             </table>
         </div>        

@@ -23,24 +23,24 @@
             
             
                 <div id="container-h1"> <h1> Cadastro de Clientes </h1> </div>
-                <form> 
+                <form action="/ArteNativaBeta-master/GerenciaCliente" method="post"> 
                     
-                        <input type="text" title="Nome" class="J_place">
-                        <input type="text" title="Telefone Residêncial" class="J_place">
-                        <input type="text" title="Telefone Celular" class="J_place">
-                        <input type="text" title="Email" class="J_place">
+                        <input type="text" required="required" title="Nome" name="nome" class="J_place">
+                        <input type="text" required="required" title="Telefone Residêncial" name="tel" class="J_place">
+                        <input type="text" required="required" title="Telefone Celular" name="cel" class="J_place">
+                        <input type="text" title="Email" required="required" name="email" class="J_place">
                         <p>data de nascimento: </p>
-                        <input id="date" type="date" title="Data de Nascimento" class="J_place">
-                        <input type="text" title="Rg" class="J_place" >
-                        <input type="text" title="CPF" class="J_place">
-                        <input type="text" id="cep" title="CEP" class="J_place">
-                        <input type="text" id="rua" title="Rua" class="J_place">
-                        <input type="text" id="bairro" title="Bairro" class="J_place">
-                        <input type="text" id="cidade" title="Cidade" class="J_place">
-                        <input type="text" id="uf" title="Estado" class="J_place">
+                        <input id="date" type="date" required="required" title="Data de Nascimento" name="dataNasc" class="J_place">
+                        <input type="text" title="Rg" required="required" name="rg" class="J_place" >
+                        <input type="text" title="CPF" required="required" name="cpf" class="J_place">
+                        <input type="text" id="cep" required="required" title="CEP" name="cep" class="J_place">
+                        <input type="text" id="rua" required="required" title="Rua" name="rua" class="J_place">
+                        <input type="text" id="bairro" required="required" title="Bairro" name="bairro" class="J_place">
+                        <input type="text" id="cidade" required="required" title="Cidade" name="cidade" class="J_place">
+                        <input type="text" id="uf" required="required" title="Estado" name="estado" class="J_place">
                         <p>Número da residência: </p>
-                        <input type="number"   title="Insira o Numero da residência(ex:9)" class="J_place">
-                        <input type="text" title="Complemento" class="J_place">
+                        <input type="number" name="numero" required="required" title="Insira o Numero da residência(ex:9)" class="J_place">
+                        <input type="text" name="complemento" required="required" title="Complemento" class="J_place">
                        <input class="btn" type="submit" value="Cadastrar">
                        
                 </form>    
