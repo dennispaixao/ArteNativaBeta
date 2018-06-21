@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
+        <servlet-name>GerenciaCliente</servlet-name>
+        <servlet-class>Control.GerenciaCliente</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Navigation</servlet-name>
         <servlet-class>Control.Navigation</servlet-class>
     </servlet>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ItensPedido</servlet-name>
         <url-pattern>/ItensPedido</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>GerenciaCliente</servlet-name>
+        <url-pattern>/GerenciaCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

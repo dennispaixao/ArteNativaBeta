@@ -6,11 +6,15 @@
 package Control;
 
 import DAO.CategoriaDAO;
+import DAO.ClienteDao;
+import DAO.ClienteDaoImpl;
 import Model.Categoria;
+import Model.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -71,6 +75,9 @@ public class Navigation extends HttpServlet {
             case "Gerencia_Cliente":
                 {
                     CategoriaDAO cDAO = new CategoriaDAO();
+                    ClienteDao cliDao = new ClienteDaoImpl();
+                    List<Cliente> clientes = cliDao.listarTodosClientes();
+                    request.setAttribute("listaCliente", clientes);
                     RequestDispatcher rd = request.getRequestDispatcher("gerCli.jsp");
                     rd.forward(request, response);
                     break;
