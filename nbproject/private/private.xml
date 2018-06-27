@@ -5,17 +5,22 @@
             <url>src/java/DAO/ClienteDaoImpl.java</url>
             <bookmark id="1">
                 <name/>
-                <line>26</line>
+                <line>27</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/DAO/FornecedorDaoImpl.java</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/web/gerCli.jsp</file>
             <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/Control/GerenciaCliente.java</file>
-            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/DAO/ClienteDaoImpl.java</file>
-            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/DAO/ClienteDao.java</file>
-            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/util/ClienteParse.java</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/web/gerForn.jsp</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/Control/GerenciaFornecedor.java</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/web/cadForn.jsp</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/Model/Fornecedor.java</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/web/cadCli.jsp</file>
+            <file>file:/C:/Users/xagaa/Documents/NetBeansProjects/ArteNativaBeta-master/src/java/Control/Navigation.java</file>
         </group>
     </open-files>
 </project-private>
