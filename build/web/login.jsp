@@ -20,9 +20,14 @@
     <body>
         <section id="container-geral">
             
+            <%
+                String login = (String) request.getAttribute("login");
+                String senha = (String) request.getAttribute("senha");
+             %>  
+            
             <section id="container-login">
                 <div id="box-login">
-                    <form>
+                    <form action="/ArteNativaBeta-master/login" method="post">
                         <div id="logo">
                         
                         </div> 
@@ -30,14 +35,20 @@
                         <span id="msg"></span>
                       
                         
-                        <input  type="text" name="user" id="user" title="Insira aqui o usuário" class="J_place"> 
-                        <input type="password" name="password" id="senha" title="senha"  class="J_place"> <br>
+                        <input  type="text" name="login" id="user" placeholder="Insira aqui o usuário" class="J_place"> 
+                        <input type="password" name="senha" id="senha" placeholder="*****" class="J_place"> <br>    
+                        <% 
+                        if (login != null || senha != null){ %>
+                            <p><%= login %></>
+                        
+                            <p><%= senha %></>
+                        <%}%>                                
                         <div  id="links">
                         <a href="#"> cadastre-se </a> <br>
                         <a id="voltar" href="login.jsp"> voltar </a>
                         </div>
-                        <input type="button" id="btn-proximo" value="proximo" >
-                        <input type="button" id="btn-logar" value="logar" >
+                        <!--<input type="button" id="btn-proximo" value="proximo" >-->
+                        <input type="submit" id="btn-logar"  value="logar" >
                     </form>    
                 </div>    
             </section>

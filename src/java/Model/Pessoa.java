@@ -1,10 +1,10 @@
 package Model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Pessoa {
     
-    private Date dataNasc;
+    private LocalDate dataNasc;
     private String nome;
     private String email;
     private String tlfixo;
@@ -13,7 +13,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(Date dataNasc, String nome, String email, String tlfixo, String celular) {
+    public Pessoa(LocalDate dataNasc, String nome, String email, String tlfixo, String celular) {
         this.dataNasc = dataNasc;
         this.nome = nome;
         this.email = email;
@@ -21,11 +21,11 @@ public class Pessoa {
         this.celular = celular;
     }
     
-    public Date getDataNasc() {
+    public LocalDate getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(Date dataNasc) {
+    public void setDataNasc(LocalDate dataNasc) {
         this.dataNasc = dataNasc;
     }
 

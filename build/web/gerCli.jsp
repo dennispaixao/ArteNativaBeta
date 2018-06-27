@@ -47,7 +47,8 @@
                 </thead>
                 <tbody>
                     <% 
-                        if (clientes != null){ %>
+                        if (clientes != null){
+                    %>
                     <% for (Cliente cliente : clientes) { %>
                     <tr>
                         <td><%= cliente.getIdCliente() %></td>
@@ -55,13 +56,13 @@
                         <td><%= cliente.getDataCadastro() %></td>
                         <td>Aguardando Pedido</td>
                         <td>
-                            <a href="GerenciaCliente?ac=VerCliente&id=<%=0 %>">
+                            <a href="GerenciaCliente?ac=VerCliente&id=<%=cliente.getIdCliente()%>">
                                 <img src="src/img/icones/lupa.png" alt="vizualizar" title="vizualizar"/>
                             </a>
-                            <a href="ControleCliente?ac=ExcluirProduto&id=<%=0 %>">
+                            <a href="GerenciaCliente?ac=ExcluirCliente&id=<%=cliente.getIdCliente()%>">
                                 <img src="src/img/excluir.png" alt="excluir" title="excluir"/>
                             </a>
-                            <a href="GerenciaCliente?ac=AlterarCliente&id=<%=0%>">
+                            <a href="GerenciaCliente?ac=AlterarCliente&id=<%=cliente.getIdCliente()%>">
                                 <img src="src/img/editar.png" alt="alterar" title="alterar"/>
                             </a>
                         </td>

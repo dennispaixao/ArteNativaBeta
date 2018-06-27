@@ -10,7 +10,7 @@ public class ConectaBanco {
         Connection conexao = null;
         try {
             Class.forName("org.postgresql.Driver");
-            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/dbcliente", "postgres", "postgres");
+            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/dbArteNativa", "postgres", "postgres");
         
         } catch (Exception erro2) {
             throw new RuntimeException(erro2);

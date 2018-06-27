@@ -5,6 +5,11 @@ CONSTRAINT pk_id_perfil PRIMARY KEY (id_perfil)
 );
 CREATE SEQUENCE perfil_seq;
 
+insert into perfil values(nextval('perfil_seq'), 'gerente');
+insert into perfil values(nextval('perfil_seq'), 'cliente');
+insert into perfil values(nextval('perfil_seq'), 'funcionario');
+
+
 CREATE TABLE documento(
 id_documento integer,
 numero VARCHAR(50) NOT NULL,
@@ -15,7 +20,7 @@ CONSTRAINT pk_id_documento PRIMARY KEY (id_documento)
 CREATE SEQUENCE documento_seq;
 
 CREATE TABLE cliente(
-id_cliente integer,
+id_user integer,
 login VARCHAR(500) NOT NULL,
 senha VARCHAR(100) NOT NULL,
 data_cadastro DATE,
@@ -23,10 +28,10 @@ nome VARCHAR(100) NOT NULL,
 email VARCHAR(100) NOT NULL,
 telfixo VARCHAR(100) NOT NULL,
 celular VARCHAR(100) NOT NULL,
-status VARCHAR(50) CHECK (status IN ('Ativo','Inativo')),
+situacao integer,
 id_perfil integer,
 data_nasc DATE,
-CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente),
+CONSTRAINT pk_id_cliente PRIMARY KEY (id_user),
 CONSTRAINT fk_cli_id_perfil FOREIGN KEY (id_perfil) REFERENCES perfil(id_perfil)
 );
 CREATE SEQUENCE user_seq;
@@ -45,5 +50,30 @@ id_user integer,
 CONSTRAINT pk_id_endereco PRIMARY KEY (id_endereco)
 );
 CREATE SEQUENCE endereco_seq;
+
+create table categoria(
+id integer primary key,
+descricao varchar(100),
+situacao integer
+);
+
+create sequence cat_seq;
+
+insert into categoria values(nextval('cat_seq'), 'Estofado', 1);
+insert into categoria values(nextval('cat_seq'), 'Cozinha', 1);
+
+
+CREATE TABLE fornecedor(
+id_user integer,
+data_cadastro DATE,
+nome VARCHAR(100) NOT NULL,	
+email VARCHAR(100) NOT NULL,
+telfixo VARCHAR(100) NOT NULL,
+celular VARCHAR(100) NOT NULL,
+situacao integer,
+data_nasc DATE,
+CONSTRAINT pk_id_fornecedor PRIMARY KEY (id_user)
+);
+
 
 

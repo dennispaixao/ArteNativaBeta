@@ -1,7 +1,7 @@
 package Model;
 
-import java.util.ArrayList;
-import java.util.Date;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class Cliente extends Pessoa{
@@ -13,7 +13,7 @@ public class Cliente extends Pessoa{
     private Endereco endereco;
     private List<Documento> documentos;
     private String status;
-    private Date dataCadastro;
+    private LocalDate dataCadastro;
 
 
     public Cliente() {
@@ -33,11 +33,11 @@ public class Cliente extends Pessoa{
         this.status = status;
     }
 
-    public Date getDataCadastro() {
+    public LocalDate getDataCadastro() {
         return dataCadastro;
     }
 
-    public void setDataCadastro(Date dataCadastro) {
+    public void setDataCadastro(LocalDate dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

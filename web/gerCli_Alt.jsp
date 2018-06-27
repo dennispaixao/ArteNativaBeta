@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Model.Cliente"%>
+<%@page import="Model.Documento"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,29 +21,38 @@
     </head>
     <body>
          <%@ include file="menu.jsp" %>
-        
+        <%
+                Cliente c = (Cliente) request.getAttribute("cliente");
+        %>    
         <session id="formulario">
             <div id="voltar" >   <a href="Navigation?ac=Gerencia_Cliente"> Voltar </a></div>
                 <div id="container-h1"> <h1> Alterar Cliente </h1> </div>
-                <form> 
-                        <input type="text" title="Nome" class="J_place">
-                        <input type="text" title="Telefone Residêncial" class="J_place">
-                         <input type="text" title="Telefone Celular" class="J_place">
-                          <input type="text" title="Email" class="J_place">
+                <form action="/ArteNativaBeta-master/GerenciaCliente" method="post"> 
+                        <input type="hidden" title="Nome" name="id" value="<%= c.getIdCliente()%>">
+                        <input type="text" title="Nome" name="nome" value="<%= c.getNome()%>">
+                        <input type="text" title="Telefone Residêncial" name="tel" value="<%= c.getTlfixo()%>">
+                         <input type="text" title="Telefone Celular" name="cel" value="<%= c.getCelular()%>">
+                          <input type="text" title="Email" name="email" value="<%= c.getEmail()%>">
                         <p>data de nascimento: </p>
-                        <input id="date" type="date" title="Data de Nascimento" class="J_place">
-                        <input type="text" title="Rg" class="J_place" >
-                        <input type="text" title="CPF" class="J_place">
-                        <input type="text" id="cep" title="CEP" class="J_place">
-                        <input type="text" id="rua" title="Rua" class="J_place">
-                        <input type="text" id="bairro" title="Bairro" class="J_place">
-                        <input type="text" id="cidade" title="Cidade" class="J_place">
-                        <input type="text" id="uf" title="Estado" class="J_place">
+                        <input id="date" type="date" title="Data de Nascimento" name="dataNasc" value="<%= c.getDataNasc()%>">
+                        <% for(Documento doc : c.getDocumentos()){ %>    
+                            <%if(doc.getDescricao().equals("rg")) { %>
+                                <input type="text" title="Rg" name="rg" value="<%= doc.getNumero() %>" >
+                            <%} %>
+                            <%if(doc.getDescricao().equals("cpf")) { %>
+                                <input type="text" title="CPF" name="cpf" value="<%= doc.getNumero()%>">
+                            <%} %>    
+                        <%} %>
+                        <input type="text" id="cep" title="CEP" name="cep" value="<%= c.getEndereco().getCep()%>">
+                        <input type="text" id="rua" title="Rua" name="rua" value="<%= c.getEndereco().getRua()%>">
+                        <input type="text" id="bairro" title="Bairro" name="bairro" value="<%= c.getEndereco().getBairro()%>">
+                        <input type="text" id="cidade" title="Cidade" name="cidade" value="<%= c.getEndereco().getCidade()%>">
+                        <input type="text" id="uf" title="Estado" name="estado" value="<%= c.getEndereco().getEstado()%>">
                         <p>Número da residência: </p>
-                        <input type="number"   title="Insira o Numero da residência(ex:9)" class="J_place">
-                        <input type="text" title="Complemento" class="J_place">
+                        <input type="number"  name="numero" title="Insira o Numero da residência(ex:9)" value="<%= c.getEndereco().getNumero()%>">
+                        <input type="text" name="complemento" title="Complemento" value="<%= c.getEndereco().getComplemento()%>">
                         <input class="btn" type="submit" name="alterar_btn" value="Cancelar" style="display:inline-block">
-                        <input class="btn" type="submit" name="alterar_btn" value="Alterar" style="display:inline-block">
+                        <input class="btn" type="submit" name="acao" value="Alterar" style="display:inline-block">
                        
                 </form>    
                       

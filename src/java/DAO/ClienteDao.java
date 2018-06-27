@@ -1,7 +1,6 @@
 package DAO;
 
 import Model.Cliente;
-import Model.Pessoa;
 import Model.Perfil;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public interface ClienteDao {
 
 	void alterarCliente(Cliente cliente);
 
-	void deleterCliente(String login);
+	void deleterCliente(Integer idPessoa);
 	
 	Cliente efetuarLogin(String login, String senha);
 	

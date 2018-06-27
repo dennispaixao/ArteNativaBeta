@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="Model.Categoria"%>
+<%@page import="Model.Fornecedor"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
     </head>
     <body>
 
-
+        
         <%@ include file="menu.jsp" %> 
         <div id="container-h1"><h1> Fornecedores </h1></div>
          <div id="box-pesquisa">   
@@ -30,7 +31,9 @@
                 <div id="lupa"></div>
               
           </div> 
-            
+             <%
+                ArrayList<Fornecedor> fornecedores = (ArrayList<Fornecedor>) request.getAttribute("listaFornecedores");
+        %>  
         <div id="table">
             <table border="1px" >     
                 <thead>
@@ -43,25 +46,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (int i = 0; i <10; i++) { %>
+                     <% 
+                        if (fornecedores != null){
+                    %>
+                    <% for (Fornecedor forne : fornecedores) { %>
                     <tr>
-                        <td>386845</td>
-                        <td>Nome Forn <%= i %></td>  
-                        <td>Categoria 1</td>
-                        <td>Grupo1</td>
+                        <td><%= forne.getIdFornecedor() %></td>
+                        <td><%= forne.getNome() %></td>  
+                        <td>Estofado</td>
+                        <td>Sala</td>
                         <td>
-                            <a href="GerenciaFornecedor?ac=VerFornecedor&id=<%=0 %>">
+                            <a href="GerenciaFornecedor?ac=VerFornecedor&id=<%= forne.getIdFornecedor() %>">
                                 <img src="src/img/icones/lupa.png" alt="vizualizar" title="vizualizar"/>
                             </a>
-                            <a href="GerenciaFornecedor?ac=ExcluirFornecedor&id=<%=0 %>=<% %>">
+                            <a href="GerenciaFornecedor?ac=ExcluirFornecedor&id=<%= forne.getIdFornecedor() %>">
                                 <img src="src/img/excluir.png" alt="excluir" title="excluir"/>
                             </a>
-                            <a href="GerenciaFornecedor?ac=AlterarFornecedor&id=<%=0 %>=<% %>">
+                            <a href="GerenciaFornecedor?ac=AlterarFornecedor&id=<%= forne.getIdFornecedor() %>">
                                 <img src="src/img/editar.png" alt="alterar" title="alterar"/>
                             </a>
                         </td>
                     </tr>
                     <%}%> 
+                  <%}%>  
                 </tbody>
             </table>
         </div>        

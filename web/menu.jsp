@@ -6,11 +6,19 @@
 <script src="src/scripts/oculos_bold.js" type="text/javascript"></script>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Model.Cliente"%>
 <meta charset="utf-8">
-
+        <%
+            Cliente pessoa = (Cliente) request.getAttribute("login");
+         %>  
         <div id="topo">
               <div id="greetings">
-                  <p> Bom dia Dennis
+                  <p> Bom dia <% 
+                        if (pessoa != null){ %>
+                            <%= pessoa %>
+                        
+                          
+                        <%}%>   
                   <a href=""> Sair </a></p>
               </div>    
               <div id="logo"> 

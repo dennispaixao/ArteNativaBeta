@@ -10,11 +10,11 @@ public interface DocumentoDao {
 
 	void cadastrarDocumento(Documento documento, Integer id);
 
-	List<Documento> listarDocumentoPorPessoa(Pessoa pessoa);
+	List<Documento> listarDocumentoPorPessoa(Integer id);
 
 	Documento pegarUmDocumento(String login);
 
-	void alterarDocumento(List<Documento> documentos, Pessoa pessoa);
+	void alterarDocumento(Documento documento, Integer id);
 
 	void deleterDocumento(Documento documento);
 

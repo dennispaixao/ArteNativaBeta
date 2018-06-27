@@ -20,13 +20,16 @@
     </head>
     <body>
         <%@ include file="menu.jsp" %>
-       <% ArrayList<Categoria> listaCategoria = (ArrayList<Categoria>) request.getAttribute("listaCategoria"); %>
+       <% 
+           ArrayList<Categoria> listaCategoria = (ArrayList<Categoria>) request.getAttribute("listaCategoria"); 
+           ArrayList<Categoria> listaCategoria = (ArrayList<Categoria>) request.getAttribute("listaCategoria"); 
+       %>
         <session id="formulario">
             
             
                 <div id="container-h1"> <h1> Cadastro de Fornecedor </h1> </div>
-                <form> 
-                        <input type="text" title="Nome" class="J_place">
+                <form action="/ArteNativaBeta-master/GerenciaFornecedor" method="post"> 
+                        <input type="text" title="Nome" name="nome" class="J_place">
                         <p>categoria:</p>
                         <select name="Categoria">
                            <%
@@ -37,19 +40,22 @@
                                }
                            %> 
                        </select>
-                        <input type="text" title="Telefone Fixo" class="J_place">
-                         <input type="text" title="Telefone Celular" class="J_place">
-                        <input type="text" title="CNPJ" class="J_place" >
-                        <input type="text" title="CPF" class="J_place">
-                        <input type="text" id="cep" title="CEP" class="J_place">
-                        <input type="text" id="rua" title="Rua" class="J_place">
-                        <input type="text" id="bairro" title="Bairro" class="J_place">
-                        <input type="text" id="cidade" title="Cidade" class="J_place">
-                        <input type="text" id="uf" title="Estado" class="J_place">
+                        <input type="text" title="Telefone Fixo" name="tel" class="J_place">
+                         <input type="text" title="Telefone Celular" name="cel" class="J_place">
+                         <input type="text" title="Email" required="required" name="email" class="J_place">
+                         <p>data de Criacão: </p>
+                         <input id="date" type="date" required="required" title="Data Empresa" name="dataNasc" class="J_place">
+                        <input type="text" title="CNPJ" name="cnpj" class="J_place" >
+                        <input type="text" title="CPF" name="cpf" class="J_place">
+                        <input type="text" id="cep" title="CEP" name="cep" class="J_place">
+                        <input type="text" id="rua" title="Rua" name="rua" class="J_place">
+                        <input type="text" id="bairro" title="Bairro" name="bairro" class="J_place">
+                        <input type="text" id="cidade" title="Cidade" name="cidade" class="J_place">
+                        <input type="text" id="uf" title="Estado" name="estado" class="J_place">
                         <p>Número do endereço: </p>
-                        <input type="number"   title="Insira o Numero do endereço(ex: 33)">
-                        <input type="text" title="Complemento" class="J_place">
-                       <input class="btn" type="submit" value="Cadastrar">
+                        <input type="number"  name="numero" title="Insira o Numero do endereço(ex: 33)">
+                        <input type="text" name="complemento" title="Complemento" class="J_place">
+                       <input class="btn" type="submit" name="acao" value="Cadastrar">
                 </form>    
                       
         </session>   

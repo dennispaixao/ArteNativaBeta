@@ -9,12 +9,8 @@ public interface EnderecoDao {
 
 	void cadastrarEndereco(Endereco endereco, Integer id);
 
-	Endereco listarEnderecoPorPessoa(Cliente cliente);
+	Endereco listarUmEndereco(Integer id);
 
-	Endereco listarUmEndereco(Cliente login);
-
-	void alterarEndereco(Endereco endereco);
-
-	void deleterEndereco(Endereco endereco);
+	void alterarEndereco(Endereco endereco, Integer id);
 
 }

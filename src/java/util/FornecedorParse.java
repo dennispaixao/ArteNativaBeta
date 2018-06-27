@@ -4,34 +4,32 @@ package util;
 import Model.Cliente;
 import Model.Documento;
 import Model.Endereco;
+import Model.Fornecedor;
 import java.time.LocalDate;
 import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class ClienteParse {
+public class FornecedorParse {
 
-    public static Cliente realizaParse(HttpServletRequest req) {
-        Cliente cliente = new Cliente();
+    public static Fornecedor realizaParse(HttpServletRequest req) {
+        Fornecedor fornecedor = new Fornecedor();
        
-        cliente.setNome(req.getParameter("nome"));
-        cliente.setDataNasc(LocalDate.parse(req.getParameter("dataNasc")));
+        fornecedor.setNome(req.getParameter("nome"));
+        fornecedor.setDataNasc(LocalDate.parse(req.getParameter("dataNasc")));
         
-        cliente.setTlfixo(req.getParameter("tel"));
-        cliente.setCelular(req.getParameter("cel"));
-        cliente.setEmail(req.getParameter("email"));
-        cliente.setLogin(req.getParameter("email"));
+        fornecedor.setTlfixo(req.getParameter("tel"));
+        fornecedor.setCelular(req.getParameter("cel"));
+        fornecedor.setEmail(req.getParameter("email"));
         
-        cliente.setSenha(req.getParameter("senha") == null ? "12345": req.getParameter("senha") );
-        
-        cliente.setDocumentos(Arrays.asList(
+        fornecedor.setDocumentos(Arrays.asList(
                               new Documento(req.getParameter("cpf"), "cpf"), 
-                              new Documento(req.getParameter("rg"), "rg"))
+                              new Documento(req.getParameter("cnpj"), "cnpj"))
                               );
         
-        cliente.setEmail(req.getParameter("email"));
+        fornecedor.setEmail(req.getParameter("email"));
         
-        cliente.setEndereco(new Endereco(
+        fornecedor.setEndereco(new Endereco(
                             req.getParameter("pais"),
                             req.getParameter("estado"),
                             req.getParameter("cidade"),
@@ -43,7 +41,7 @@ public class ClienteParse {
                             ));
         
         
-       return cliente;
+       return fornecedor;
         
     }
 

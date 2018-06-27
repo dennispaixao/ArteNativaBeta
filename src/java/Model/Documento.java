@@ -7,7 +7,7 @@ public class Documento {
 	private Integer idDocumento;
 	private String numero;
 	private String descricao;
-	private Integer idCliente;
+	private Integer idUser;
         /**/
 	public Documento() {
 
@@ -44,12 +44,12 @@ public class Documento {
 		this.descricao = descricao;
 	}
 
-	public Integer getIdCliente() {
-		return idCliente;
+	public Integer getIdUser() {
+		return idUser;
 	}
 
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
+	public void setIdUser(Integer idUser) {
+		this.idUser = idUser;
 	}
 
 }

@@ -41,7 +41,7 @@
                         <p>Número da residência: </p>
                         <input type="number" name="numero" required="required" title="Insira o Numero da residência(ex:9)" class="J_place">
                         <input type="text" name="complemento" required="required" title="Complemento" class="J_place">
-                       <input class="btn" type="submit" value="Cadastrar">
+                       <input class="btn" type="submit" name="acao" value="Cadastrar">
                        
                 </form>    
                       

@@ -4,7 +4,9 @@ import Model.Documento;
 import Model.Pessoa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import util.ConectaBanco;
 
@@ -35,65 +37,53 @@ public class DocumentoDaoImpl implements DocumentoDao {
     }
 
 	@Override
-	public List<Documento> listarDocumentoPorPessoa(Pessoa pessoa) {
+	public List<Documento> listarDocumentoPorPessoa(Integer id) {
 
-//		try {
-//			Connection con = new ConexaoBancoDeDados().getConnection();
-//			List<Documento> documentos = new ArrayList<>();
-//
-//			String sqlSelect = "SELECT * FROM Documento where id_pessoa = ?";
-//			PreparedStatement ps = con.prepareStatement(sqlSelect);
-//			ps.setInt(1, pessoa.getId());
-//
-//			ResultSet rs = ps.executeQuery();
-//
-//			while (rs.next()) {
-//				Documento documento = new Documento();
-//				documento.setIdDocumento(rs.getInt("id_documento"));
-//				documento.setNumero(rs.getString("numero"));
-//				documento.setDescricao(rs.getString("descricao"));
-//				documento.setIdPessoa(pessoa.getId());
-//
-//				documentos.add(documento);
-//			}
-//			return documentos;
+            try {
+                Connection con = ConectaBanco.getConexao(); 
+                List<Documento> documentos = new ArrayList<>();
 
-//		} catch (SQLException e) {
-//			throw new RuntimeException(e);
-//		}
-            return null;
+                String sqlSelect = "SELECT * FROM Documento where id_user = ?";
+                PreparedStatement ps = con.prepareStatement(sqlSelect);
+                ps.setInt(1, id);
+
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    Documento documento = new Documento();
+                    documento.setIdDocumento(rs.getInt("id_documento"));
+                    documento.setNumero(rs.getString("numero"));
+                    documento.setDescricao(rs.getString("descricao"));
+                    documento.setIdUser(id);
+
+                    documentos.add(documento);
+                }
+                return documentos;
+
+            } catch (SQLException e) {
+                    throw new RuntimeException(e);
+            }
+            
 	}
 
 	@Override
-	public void alterarDocumento(List<Documento> ListaDedocumentos, Pessoa pessoa) {
+	public void alterarDocumento(Documento documento, Integer id) {   
+            try {
+                Connection con = ConectaBanco.getConexao(); 
 
-//		int i = 0;
-//		for (Documento documento : ListaDedocumentos) {
-//
-//			if ((pessoa.getDocumentos().size() > 0)
-//					&& (pessoa.getDocumentos().get(i).getDescricao().equals(documento.getDescricao()))) {
-//
-//				try {
-//					Connection con = new ConexaoBancoDeDados().getConnection();
-//
-//					String sqlUpdate = "UPDATE Documento SET numero =? WHERE id_pessoa = ? and descricao like ?";
-//					PreparedStatement ps = con.prepareStatement(sqlUpdate);
-//					ps.setString(1, documento.getNumero());
-//					ps.setInt(2, documento.getIdPessoa());
-//					ps.setString(3, documento.getDescricao());
-//					ps.executeUpdate();
-//
-//					ps.close();
-//					con.close();
-//					i++;
-//				} catch (SQLException e) {
-//					e.printStackTrace();
-//				}
-//			} else {
-//				cadastrarDocumento(documento, pessoa);
-//
-//			}
-//		}
+                String sqlUpdate = "UPDATE Documento SET numero =? WHERE id_user = ? and descricao like ?";
+                PreparedStatement ps = con.prepareStatement(sqlUpdate);
+                ps.setString(1, documento.getNumero());
+                ps.setInt(2, id);
+                ps.setString(3, documento.getDescricao());
+                ps.executeUpdate();
+
+                ps.close();
+                con.close();
+
+            } catch (SQLException e) {
+                    e.printStackTrace();
+            }
 
 	}
 

@@ -8,8 +8,11 @@ package Control;
 import DAO.CategoriaDAO;
 import DAO.ClienteDao;
 import DAO.ClienteDaoImpl;
+import DAO.FornecedorDao;
+import DAO.FornecedorDaoImpl;
 import Model.Categoria;
 import Model.Cliente;
+import Model.Fornecedor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -90,6 +93,9 @@ public class Navigation extends HttpServlet {
                 }
             case "Gerencia_Fornecedor":
                 {
+                    FornecedorDao dao = new FornecedorDaoImpl();
+                    List<Fornecedor> fornecedores = dao.listarTodosFornecedores();
+                    request.setAttribute("listaFornecedores", fornecedores);
                     RequestDispatcher rd = request.getRequestDispatcher("gerForn.jsp");
                     rd.forward(request, response);
                     break;
